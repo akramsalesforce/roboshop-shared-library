@@ -2,7 +2,7 @@ def lintChecks() {
   sh '''
     # We commented this because devs gonna check the failures.
     #~/node_modules/jslint/bin/jslint.js server.js
-    pylint *.py
+    #pylint *.py
     echo Lint Check for ${COMPONENT}
   '''
 }
