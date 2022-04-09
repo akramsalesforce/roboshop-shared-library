@@ -5,3 +5,25 @@ def lintChecks() {
     echo Link Check 
   '''
 }
+
+def call() {
+  pipeline {
+    agent any
+
+    stages {
+
+      // For Each Commit
+      stage('Lint Checks') {
+        steps {
+          script {
+            nodejs.lintChecks()
+          }
+        }
+      }
+
+    } // End of Stages
+
+  }
+
+
+}
