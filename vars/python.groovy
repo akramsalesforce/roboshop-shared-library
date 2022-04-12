@@ -35,6 +35,34 @@ def call() {
         }
       }
 
+
+      stage('Test Cases')  {
+
+        parallel {
+
+          stage('Unit Tests') {
+            steps {
+              sh 'echo Unit Tests'
+            }
+          }
+
+          stage('Integration Tests') {
+            steps {
+              sh 'echo Integration Tests'
+            }
+          }
+
+          stage('Functional Tests') {
+            steps {
+              sh 'echo Functional Tests'
+            }
+          }
+
+        }
+
+      }
+
+
     } // End of Stages
 
   }
