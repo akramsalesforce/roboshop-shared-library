@@ -79,9 +79,9 @@ def artifacts() {
     stage('Prepare Artifacts') {
       if (env.APP_TYPE == "nodejs") {
         sh '''
-          ls -ltr
+          ls -l
           npm install 
-          ls -ltr
+          ls -l
           zip -r ${COMPONENT}-${TAG_NAME}.zip node_modules server.js 
         '''
       } else if (env.APP_TYPE == "maven") {
