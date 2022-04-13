@@ -1,11 +1,4 @@
-def lintChecks() {
-  sh '''
-    # We commented this because devs gonna check the failures.
-    #~/node_modules/jslint/bin/jslint.js server.js
-    #mvn checkstyle:check
-    echo Lint Check for ${COMPONENT}
-  '''
-}
+env.APP_TYPE = "maven"
 
 def call() {
   pipeline {
