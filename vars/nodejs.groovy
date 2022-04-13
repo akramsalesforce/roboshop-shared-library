@@ -71,7 +71,7 @@ def call() {
             def test = sh(returnStdout: true, script: "ls")
             print test
 
-            def UPLOAD_STATUS=sh(returnStdout: true, script: "curl -s http://172.31.0.90:8081/service/rest/repository/browse/\${COMPONENT} | grep \${COMPONENT}-\${TAG_NAME}.zip")
+            def UPLOAD_STATUS=sh(returnStdout: true, script: "curl -s http://172.31.0.90:8081/service/rest/repository/browse/cart/ | grep cart-1.0.0.zip")
             print UPLOAD_STATUS
           }
         }
