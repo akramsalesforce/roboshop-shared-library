@@ -46,9 +46,6 @@ def lintChecks() {
 }
 
 def testCases() {
-  stage('Test Cases')  {
-
-    parallel {
 
       stage('Unit Tests') {
           sh 'echo Unit Tests'
@@ -62,8 +59,5 @@ def testCases() {
           sh 'echo Functional Tests'
       }
 
-    }
-
-  }
 }
 
