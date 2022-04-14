@@ -96,12 +96,10 @@ def artifacts() {
         '''
       } else if (env.APP_TYPE == "golang") {
         sh '''
-          ls -l
           go mod init ${COMPONENT}
           go get 
           go build
-          ls -l 
-          
+          zip -r ${COMPONENT}-${TAG_NAME}.zip ${COMPONENT}
         '''
       }
     }
