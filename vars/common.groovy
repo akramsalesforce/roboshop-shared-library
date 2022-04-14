@@ -96,7 +96,12 @@ def artifacts() {
         '''
       } else if (env.APP_TYPE == "golang") {
         sh '''
-          echo 
+          ls -l
+          go mod init ${COMPONENT}
+          go get 
+          go build
+          ls -l 
+          
         '''
       }
     }
