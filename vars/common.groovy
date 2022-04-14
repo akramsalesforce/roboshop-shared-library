@@ -41,6 +41,13 @@ def lintChecks() {
         echo Link Check for ${COMPONENT}
       '''
     }
+    else if (env.APP_TYPE == "nginx" ){
+      sh '''
+        # We commented this because devs gonna check the failures.
+        #~/node_modules/jslint/bin/jslint.js server.js
+        echo Link Check for ${COMPONENT}
+      '''
+    }
   }
 
 }
@@ -100,6 +107,12 @@ def artifacts() {
           go get 
           go build
           zip -r ${COMPONENT}-${TAG_NAME}.zip ${COMPONENT}
+        '''
+      }
+      else if (env.APP_TYPE == "nginx" ){
+        sh '''
+          cd static 
+          zip -r ../${COMPONENT}-${TAG_NAME}.zip * 
         '''
       }
     }
