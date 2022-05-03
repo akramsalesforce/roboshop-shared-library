@@ -1,7 +1,6 @@
 def call() {
 
-  TERRAFORM_DIR = "null"
-  if (TERRAFORM_DIR == "null") {
+  if (!env.TERRAFORM_DIR) {
     env.TERRAFORM_DIR = "./"
   }
 
@@ -19,7 +18,7 @@ def call() {
       stage('Terrafile INIT') {
         sh '''
           cd ${TERRAFORM_DIR}
-          terrafile -f env-${ENV}/Terrafile'
+          terrafile -f env-${ENV}/Terrafile
         '''
       }
 
