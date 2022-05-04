@@ -9,7 +9,7 @@ def call() {
           choice(choices: 'dev\nprod', description: "Choose Environement", name: "ENV"),
       ]),
       parameters([
-          choice(choices: 'APP_VERSION', description: "APP VERSION", name: "APP_VERSION"),
+          string(choices: 'APP_VERSION', description: "APP VERSION", name: "APP_VERSION"),
       ])
   ])
 
