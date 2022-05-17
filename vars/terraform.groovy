@@ -42,7 +42,7 @@ def call() {
         sh '''
           cd ${TERRAFORM_DIR}
           export TF_VAR_APP_VERSION=${APP_VERSION}
-          terraform apply -var-file=env-${ENV}/${ENV}.tfvars -auto-approve -f 1
+          terraform apply -var-file=env-${ENV}/${ENV}.tfvars -auto-approve -parallelism 1
         '''
       }
 
