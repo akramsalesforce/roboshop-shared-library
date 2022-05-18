@@ -80,6 +80,7 @@ def artifacts() {
     //env.UPLOAD_STATUS=sh(returnStdout: true, script: 'curl -L -s http://172.31.0.90:8081/service/rest/repository/browse/${COMPONENT} | grep ${COMPONENT}-${TAG_NAME}.zip || true')
     //print UPLOAD_STATUS
     // Ignoring previous version check for Immutable
+    env.UPLOAD_STATUS="true"
     print 'OK'
   }
 
