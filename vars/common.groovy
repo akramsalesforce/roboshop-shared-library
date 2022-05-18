@@ -126,11 +126,12 @@ def artifacts() {
     }
 
     stage('Publish AMI') {
-      sh '''
+      ansiColor('xterm') {
+        sh '''
         terraform init 
         terraform apply -auto-approve -var APP_VERSION=${TAG_NAME}
       '''
+      }
     }
-
   }
 }
