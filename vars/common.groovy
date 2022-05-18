@@ -84,7 +84,7 @@ def artifacts() {
     print 'OK'
   }
 
-  print UPLOAD_STATUS
+  print env.UPLOAD_STATUS
 
   if(env.UPLOAD_STATUS == "") {
 
