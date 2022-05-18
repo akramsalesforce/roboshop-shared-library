@@ -84,6 +84,8 @@ def artifacts() {
     print 'OK'
   }
 
+  print UPLOAD_STATUS
+
   if(env.UPLOAD_STATUS == "") {
 
     stage('Prepare Artifacts') {
