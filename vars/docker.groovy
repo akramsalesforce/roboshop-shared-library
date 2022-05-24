@@ -6,5 +6,6 @@ def call() {
     stage('Docker Build') {
       sh "docker build ."
     }
+
   }
 }
