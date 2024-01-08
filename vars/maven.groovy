@@ -1,7 +1,7 @@
 def call() {
   node {
     sh 'rm -rf *'
-    git branch: 'main', url: "https://github.com/raghudevopsb63/${COMPONENT}"
+    git branch: 'main', url: "https://github.com/akramsalesforce/${COMPONENT}"
     env.APP_TYPE = "maven"
     common.lintChecks()
     sh 'mvn clean compile'
