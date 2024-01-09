@@ -1,7 +1,7 @@
 def call() {
   node {
     sh 'rm -rf *'
-       git branch: 'main', credentialsId: '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', url: "https://github.com/akramsaleforce/${COMPONENT}"
+    git branch: 'main', url: "https://github.com/akramsaleforce/${COMPONENT}"
 
 
     env.APP_TYPE = "nodejs"
