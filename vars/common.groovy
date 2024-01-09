@@ -29,15 +29,15 @@ def lintChecks() {
         else if (env.APP_TYPE == "python" ) {
             sh '''
         # We commented this because devs gonna check the failures.
-        #~/node_modules/jslint/bin/jslint.js server.js
-        #pylint *.py
+        ~/node_modules/jslint/bin/jslint.js server.js
+        pylint *.py
         echo Lint Check for ${COMPONENT}
       '''
         }
         else if (env.APP_TYPE == "golang" ){
             sh '''
         # We commented this because devs gonna check the failures.
-        #~/node_modules/jslint/bin/jslint.js server.js
+        ~/node_modules/jslint/bin/jslint.js server.js
         echo Link Check for ${COMPONENT}
       '''
         }
